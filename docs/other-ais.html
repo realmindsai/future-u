@@ -3,10 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Other AIs — Future U × Real Minds AI</title>
+<title>LLMs / AIs — Future U × Real Minds AI</title>
 <link rel="stylesheet" href="css/style.css">
+<style>
+  /* One-screen layout for this page only */
+  html, body { height: 100%; }
+  body.fit { overflow: hidden; }
+  body.fit .container {
+    max-width: 1180px;
+    height: 100vh;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  body.fit .wordmark { margin-bottom: 6px; }
+  body.fit .tabs { margin: 0 0 8px; }
+  body.fit h1 { font-size: 26px; margin: 0; }
+  body.fit .lede { font-size: 15px; margin: 2px 0 8px; line-height: 1.4; }
+  body.fit footer { margin-top: auto; padding-top: 8px; font-size: 12px; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    align-items: start;
+    flex: 1;
+    min-height: 0;
+  }
+  .two-col .left { min-width: 0; }
+  .two-col .right { position: sticky; top: 0; }
+
+  body.fit .ai-list { margin: 4px 0 10px; }
+  body.fit .ai-list li {
+    padding: 7px 12px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    gap: 10px;
+  }
+  body.fit .ai-list .name { min-width: 90px; font-size: 14px; }
+  body.fit .ai-list .vendor { font-size: 13px; line-height: 1.35; }
+  body.fit .ai-list .url { font-size: 11px; }
+
+  body.fit .callout.safety {
+    padding: 8px 12px;
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .right .fallback-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--purple);
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .right .fallback-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .right .fallback-sub {
+    font-size: 12px;
+    color: var(--text-sec);
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+  body.fit .qr-block {
+    padding: 16px 14px;
+    margin: 0;
+  }
+  body.fit .qr-block img {
+    width: 240px;
+    height: 240px;
+    border-width: 8px;
+  }
+  body.fit .qr-block .url { font-size: 12px; margin-top: 8px; }
+
+  @media (max-width: 820px) {
+    body.fit { overflow: auto; }
+    body.fit .container { height: auto; }
+    .two-col { grid-template-columns: 1fr; }
+    body.fit .qr-block img { width: 200px; height: 200px; }
+  }
+</style>
 </head>
-<body>
+<body class="fit">
 <div class="container">
 
   <div class="wordmark">
@@ -18,70 +106,62 @@
 
   <nav class="tabs">
     <a href="index.html">Workshop</a>
-    <a class="active" href="other-ais.html">Other AIs</a>
+    <a class="active" href="other-ais.html">LLMs / AIs</a>
     <a href="share.html">Share this page</a>
   </nav>
 
-  <h1>Other <span class="accent">AIs to try</span></h1>
-  <p class="lede">All of tonight's prompts work in any of these. Pick one. Make an account. Bookmark it. The tool matters less than the habit of using it.</p>
+  <h1>LLMs / <span class="accent">AIs to try</span></h1>
+  <p class="lede">Tonight's prompts work in any of these. Pick one. Make an account. Bookmark it. Tool matters less than habit.</p>
 
-  <h2>The list</h2>
-  <ol class="ai-list">
-    <li>
-      <span class="name">Claude</span>
-      <span class="vendor">Anthropic — our favourite. Honest, careful, good at thinking with you.</span>
-      <span class="url"><a href="https://claude.ai">claude.ai</a></span>
-    </li>
-    <li>
-      <span class="name">ChatGPT</span>
-      <span class="vendor">OpenAI — the one everyone knows. Free tier is solid.</span>
-      <span class="url"><a href="https://chat.openai.com">chat.openai.com</a></span>
-    </li>
-    <li>
-      <span class="name">Gemini</span>
-      <span class="vendor">Google — built into your Google account. Good for research with sources.</span>
-      <span class="url"><a href="https://gemini.google.com">gemini.google.com</a></span>
-    </li>
-    <li>
-      <span class="name">Grok</span>
-      <span class="vendor">xAI — on X (Twitter). Less filtered, sometimes useful, sometimes not.</span>
-      <span class="url"><a href="https://grok.com">grok.com</a></span>
-    </li>
-    <li>
-      <span class="name">DeepSeek</span>
-      <span class="vendor">Chinese model. Free, strong at maths and code. Different politics — watch for it.</span>
-      <span class="url"><a href="https://chat.deepseek.com">chat.deepseek.com</a></span>
-    </li>
-    <li>
-      <span class="name">Kimi</span>
-      <span class="vendor">Moonshot AI (China). Handles very long documents — paste a whole textbook.</span>
-      <span class="url"><a href="https://kimi.com">kimi.com</a></span>
-    </li>
-  </ol>
+  <div class="two-col">
+    <div class="left">
+      <ol class="ai-list">
+        <li>
+          <span class="name">Claude</span>
+          <span class="vendor">Anthropic — our favourite. Honest, careful, good at thinking with you.</span>
+          <span class="url"><a href="https://claude.ai">claude.ai</a></span>
+        </li>
+        <li>
+          <span class="name">ChatGPT</span>
+          <span class="vendor">OpenAI — the one everyone knows. Free tier is solid.</span>
+          <span class="url"><a href="https://chat.openai.com">chat.openai.com</a></span>
+        </li>
+        <li>
+          <span class="name">Gemini</span>
+          <span class="vendor">Google — built into your Google account. Good for research with sources.</span>
+          <span class="url"><a href="https://gemini.google.com">gemini.google.com</a></span>
+        </li>
+        <li>
+          <span class="name">Grok</span>
+          <span class="vendor">xAI — on X (Twitter). Less filtered, sometimes useful, sometimes not.</span>
+          <span class="url"><a href="https://grok.com">grok.com</a></span>
+        </li>
+        <li>
+          <span class="name">DeepSeek</span>
+          <span class="vendor">Chinese model. Free, strong at maths and code. Different politics — watch for it.</span>
+          <span class="url"><a href="https://chat.deepseek.com">chat.deepseek.com</a></span>
+        </li>
+        <li>
+          <span class="name">Kimi</span>
+          <span class="vendor">Moonshot AI (China). Handles very long documents — paste a whole textbook.</span>
+          <span class="url"><a href="https://kimi.com">kimi.com</a></span>
+        </li>
+      </ol>
 
-  <h2>The AI of <span style="color:var(--purple);">last resort</span></h2>
-  <p>If you can't sign up for any of those (no email, no phone, blocked by something), this one works without an account. Use it when nothing else will.</p>
+      <div class="callout safety">
+        <strong>Same rule everywhere:</strong> don't paste private info — no addresses, passwords, Centrelink numbers, medical or immigration details. Different AIs, same risk.
+      </div>
+    </div>
 
-  <div class="qr-block">
-    <div class="label">No login · No app · Just go</div>
-    <img src="assets/qr-deepai.png" alt="QR code for deepai.org/chat">
-    <div class="url"><a href="https://deepai.org/chat">deepai.org/chat</a></div>
-  </div>
-
-  <div class="callout">
-    <strong>Why have a fallback?</strong> Sometimes the main ones are down, or you've hit your free limit, or you're on a school computer that blocks them. The point isn't which AI — it's that <em>you</em> always have one.
-  </div>
-
-  <h2>How to pick</h2>
-  <ul class="clean">
-    <li><strong>Start with Claude or ChatGPT.</strong> Both are free. Both work for everything tonight.</li>
-    <li><strong>Gemini</strong> if you live in Gmail and Docs already.</li>
-    <li><strong>DeepSeek or Kimi</strong> if you want a free model with no signup fuss (works with email only).</li>
-    <li><strong>deepai.org/chat</strong> when you can't get to any of the others.</li>
-  </ul>
-
-  <div class="callout safety">
-    <strong>Same rule everywhere:</strong> don't paste private info — no addresses, passwords, Centrelink numbers, medical or immigration details. Different AIs, same risk.
+    <aside class="right">
+      <div class="fallback-label">AI of last resort</div>
+      <div class="fallback-title">No login · No app · Just go</div>
+      <div class="fallback-sub">When everything else is blocked or you've hit a free limit.</div>
+      <div class="qr-block">
+        <img src="assets/qr-deepai.png" alt="QR code for deepai.org/chat">
+        <div class="url"><a href="https://deepai.org/chat">deepai.org/chat</a></div>
+      </div>
+    </aside>
   </div>
 
   <footer>
